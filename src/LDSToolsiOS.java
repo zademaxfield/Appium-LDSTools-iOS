@@ -163,10 +163,10 @@ public class LDSToolsiOS {
 		//bishopMemberOfSeparateStake();	
 		//editCurrentUser();	
 		//editOtherUser();	
-		//editOtherUserInvalidPhone();	
+		editOtherUserInvalidPhone();	
 		//editOtherUserInvalidEmail();	
 		//editVisibility();	
-		invalidLoginCheck();	
+		//invalidLoginCheck();	
 		//loginCheck();	
 		
 		
@@ -209,8 +209,8 @@ public class LDSToolsiOS {
 	}
 		
 	
-	/*
 	
+	/*
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -262,13 +262,13 @@ public class LDSToolsiOS {
 		invalidLoginCheck();	
 	}
 	
-	@Test
-	public void HeaderTest() throws Exception {
-		ChristieWhiting();
-		CliffHigby();
-		KevinPalmer();
-		PatriarchOtherWards();	
-	}
+	//@Test
+	//public void HeaderTest() throws Exception {
+	//	ChristieWhiting();
+	//	CliffHigby();
+	//	KevinPalmer();
+	//	PatriarchOtherWards();	
+	//}
 	
 	//@Test
 	//public void loginCheckTest() throws Exception {
@@ -587,7 +587,7 @@ public class LDSToolsiOS {
 		Thread.sleep(2000);
 		
 		
-		checkForAlertWarning();
+		//checkForAlertWarning();
 		
 		//Search for logged in user
 		//clickButtonByID("MenuSearch");
@@ -683,8 +683,8 @@ public class LDSToolsiOS {
 		Thread.sleep(4000);
 		waitForTextToDisappear("SyncText", 500 );
 		Thread.sleep(2000);
-		checkForAlertWarning();
-		Thread.sleep(2000);
+		//checkForAlertWarning();
+		//Thread.sleep(2000);
 		//Search for logged in user
 		//clickButtonByID("MenuSearch");
 		sendTextbyXpath("SearchArea", "Tools, LDS41");
@@ -1045,7 +1045,7 @@ public class LDSToolsiOS {
 
 		syncLogInNoEnv("LDSTools2", "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&", "UAT" );
 		Thread.sleep(2000);
-		Assert.assertTrue(checkElementTextViewReturn("Incorrect username or password"));
+		Assert.assertTrue(checkElementTextViewReturn("Sign-In Failed"));
 		clickButtonByXpath("AlertOK");
 		
 		//Clear the login and password fields
@@ -1054,39 +1054,39 @@ public class LDSToolsiOS {
 		
 		syncLogInNoEnv("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", "UAT" );
 		Thread.sleep(2000);
-		Assert.assertTrue(checkElementTextViewReturn("Incorrect username or password"));
+		Assert.assertTrue(checkElementTextViewReturn("Sign-In Failed"));
 		clickButtonByXpath("AlertOK");
 		
 		//Clear the login and password fields
 		clearTextSLOWxpath("LoginUsername");
 		clearTextSLOWxpath("LoginPassword");
 		
-		syncLogInNoEnv("LDSTools2", "test|test|test$$$$test|||||||test", "UAT" );
+		syncLogInNoEnv("LDSTools2", "testtesttest", "UAT" );
 		Thread.sleep(2000);
-		Assert.assertTrue(checkElementTextViewReturn("Incorrect username or password"));
+		Assert.assertTrue(checkElementTextViewReturn("Sign-In Failed"));
 		clickButtonByXpath("AlertOK");
 		
 		//Clear the login and password fields
 		clearTextSLOWxpath("LoginUsername");
 		clearTextSLOWxpath("LoginPassword");
 		
-		syncLogInNoEnv("zmaxfield", "%%%test%%%% & ||||||| select * from household;", "Production" );
+		syncLogInNoEnv("zmaxfield", "select*fromhousehold", "Production" );
 		Thread.sleep(2000);
-		Assert.assertTrue(checkElementTextViewReturn("Incorrect username or password"));
+		Assert.assertTrue(checkElementTextViewReturn("Sign-In Failed"));
 		clickButtonByXpath("AlertOK");
 		
 		//Clear the login and password fields
 		clearTextSLOWxpath("LoginUsername");
 		clearTextSLOWxpath("LoginPassword");
 		
-		
+		/*
 		syncLogInNoEnv("", "", "UAT" );
 		Thread.sleep(2000);
-		Assert.assertTrue(checkElementTextViewReturn("Sign in to your LDS Account"));
+		//Assert.assertTrue(checkElementTextViewReturn("Sign in to your LDS Account"));
 		
 		//Clear the login and password fields
-		clearTextSLOWxpath("LoginUsername");
-		clearTextSLOWxpath("LoginPassword");
+		//clearTextSLOWxpath("LoginUsername");
+		//clearTextSLOWxpath("LoginPassword");
 		
 		syncLogInNoEnv("LDSTools2", "", "UAT" );
 		Thread.sleep(2000);
@@ -1094,15 +1094,16 @@ public class LDSToolsiOS {
 		
 		//Clear the login and password fields
 		clearTextSLOWxpath("LoginUsername");
-		clearTextSLOWxpath("LoginPassword");
+		//clearTextSLOWxpath("LoginPassword");
 		
 		syncLogInNoEnv("", "toolstester", "UAT" );
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("Sign in to your LDS Account"));
 		
 		//Clear the login and password fields
-		clearTextSLOWxpath("LoginUsername");
+		//clearTextSLOWxpath("LoginUsername");
 		clearTextSLOWxpath("LoginPassword");
+		*/
 	}
 	
 	
@@ -1291,11 +1292,14 @@ public class LDSToolsiOS {
 				//true will setup pin for a non-leader
 				pinPage("1", "1", "3", "3", true);
 				
-				clickButtonByXpath("Drawer");
-				clickButtonByXpath("DrawerSETTINGS");
 				
-				clickButtonByXpathTitleName("Sign Out");
-				clickButtonByXpath("SignOutOK");
+				logoutUser();
+				
+				//clickButtonByXpath("Drawer");
+				//clickButtonByXpath("DrawerSETTINGS");
+				
+				//clickButtonByXpathTitleName("Sign Out");
+				//clickButtonByXpath("SignOutOK");
 			}
 		}
 	}
@@ -1639,9 +1643,12 @@ public class LDSToolsiOS {
 		js.executeScript("mobile: tap", tapObject);
     	*/
 		myElement.click();
+		//Thread.sleep(1000);
 		myElement.click();
-		Thread.sleep(2000);
-    	driver.findElement(By.xpath("//UIAElement[name='Select All']")).click();
+		Thread.sleep(1000);
+    	driver.findElement(By.xpath("//*[@name=\"Select All\"]")).click();
+    	//driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[4]/UIAEditingMenu[1]/UIAElement[4]")).click();
+    	Thread.sleep(1000);
         clickButtonByXpath("PinKeyDel");
 		
 	}
@@ -2022,6 +2029,7 @@ public class LDSToolsiOS {
 	 */
 	private void pinPage(String digit1, String digit2, String digit3, String digit4, Boolean nonLeaderPin ) throws Exception {
 		int myCheck;
+		boolean elementCheck;
 		
 		//Check to see if we are getting a warning
 		myCheck = checkTextByXpathReturn("AlertMessage", "Warning");
@@ -2044,9 +2052,9 @@ public class LDSToolsiOS {
 			Thread.sleep(2000);
 			
 			//Check for a warning
-			checkElementExistsByXpath("AlertMessage");
+			elementCheck = checkElementExistsByXpath("AlertMessage");
 			//myCheck = checkTextByXpathReturn("AlertMessage", "Warning");
-			if (myCheck == 1) {
+			if (elementCheck == true) {
 				clickButtonByXpath("OK");
 				
 				//driver.rotate(ScreenOrientation.LANDSCAPE);
@@ -2329,8 +2337,6 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Young Women Presidency");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Young Women President"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Tutunoa, Lusi"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Young Women Second Counselor"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Lavea, Meise"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Young Women Secretary"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Lavea, Lonise"));
 		clickButtonByXpath("TopBack");
@@ -2446,17 +2452,17 @@ public class LDSToolsiOS {
 		//Check the members moved out report
 		//Should have a ( ) with the age by the birth date
 		clickButtonByXpathTitleName("Members Moved Out");
-		Assert.assertTrue(checkElementTextViewReturn("Fosi-Seuoti, Malologa"));
+		Assert.assertTrue(checkElementTextViewReturn("Wilson, Nora"));
 		//Birth Date
 		//TODO need to have the age calculated
-		Assert.assertTrue(checkElementTextViewReturn("Apr 16, 1990 (25)"));
-		Assert.assertTrue(checkElementTextViewReturn("Feb 21, 2015"));
+		Assert.assertTrue(checkElementTextViewReturn("Oct 10, 1936 (78)"));
+		Assert.assertTrue(checkElementTextViewReturn("May 17, 2015"));
 		
 		//The new unit is only available for bishop
 		if (newUnit == true){
-			Assert.assertTrue(checkElementTextViewReturn("Fagamalo  2nd Ward"));
+			Assert.assertTrue(checkElementTextViewReturn("Johnstone Ward"));
 		} else {
-			Assert.assertFalse(checkElementTextViewReturn("Fagamalo  2nd Ward"));
+			Assert.assertFalse(checkElementTextViewReturn("Johnstone Ward"));
 		}
 		Assert.assertFalse(checkElementTextViewReturn("Solo, Han"));
 		
@@ -2482,13 +2488,13 @@ public class LDSToolsiOS {
 		//Members with Callings
 		clickButtonByXpathTitleName("Members with Callings");
 		Assert.assertTrue(checkElementTextViewReturn("Ami, Lealofi"));
-		Assert.assertTrue(checkElementTextViewReturn("Primary First Counselor (1 year, 2 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Primary First Counselor (1 year, 3 months)"));
 		Assert.assertFalse(checkElementTextViewReturn("Skywalker, Anakin"));
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Organization");
 		Assert.assertTrue(checkElementTextViewReturn("Bishop"));
-		Assert.assertTrue(checkElementTextViewReturn("Ami, Samu (1 year, 7 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Ami, Samu (1 year, 8 months)"));
 		Assert.assertFalse(checkElementTextViewReturn("Kenobi, Obi-Wan"));
 		
 		clickButtonByXpath("TopSort");
@@ -2499,7 +2505,7 @@ public class LDSToolsiOS {
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Not Set Apart");
-		Assert.assertTrue(checkElementTextViewReturn("Ward Assistant Clerk (3 years, 2 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Ward Assistant Clerk (3 years, 3 months)"));
 		Assert.assertTrue(checkElementTextViewReturn("Sitivi, Tama Kiliona"));
 		Assert.assertFalse(checkElementTextViewReturn("P0, C3"));
 		pressBackKey();
@@ -2552,7 +2558,7 @@ public class LDSToolsiOS {
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Expiring");
-		Assert.assertTrue(checkElementTextViewReturn("Kitara, Lafaele"));
+		Assert.assertTrue(checkElementTextViewReturn("Lavea, Lonise"));
 		Assert.assertFalse(checkElementTextViewReturn("Windu, Mace"));
 		
 		clickButtonByXpath("TopSort");
@@ -2571,8 +2577,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("637  "));
-		Assert.assertTrue(checkElementTextViewReturn("287  "));
+		Assert.assertTrue(checkElementTextViewReturn("599  "));
+		Assert.assertTrue(checkElementTextViewReturn("270  "));
 		Assert.assertTrue(checkElementTextViewReturn("14  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
