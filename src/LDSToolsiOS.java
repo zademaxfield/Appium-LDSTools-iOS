@@ -134,7 +134,7 @@ public class LDSToolsiOS {
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
         capabilities.setCapability("platformVersion", "8.3");
         //capabilities.setCapability("device","iPhone 5s");
-        capabilities.setCapability("deviceName","iPhone 5s");
+        capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
         capabilities.setCapability("newCommandTimeout","600");
@@ -152,7 +152,7 @@ public class LDSToolsiOS {
     }	
 
 	
-   
+    /*
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -163,11 +163,13 @@ public class LDSToolsiOS {
 		//bishopMemberOfSeparateStake();	
 		//editCurrentUser();	
 		//editOtherUser();	
-		editOtherUserInvalidPhone();	
+		//editOtherUserInvalidPhone();	
 		//editOtherUserInvalidEmail();	
 		//editVisibility();	
 		//invalidLoginCheck();	
 		//loginCheck();	
+		
+		LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
@@ -177,7 +179,7 @@ public class LDSToolsiOS {
 		//PatriarchOtherWards();
 
 	}
-	
+	*/
 	
 
 	public void justForTesting() throws Exception {
@@ -210,7 +212,7 @@ public class LDSToolsiOS {
 		
 	
 	
-	/*
+	
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -269,13 +271,169 @@ public class LDSToolsiOS {
 	//	KevinPalmer();
 	//	PatriarchOtherWards();	
 	//}
+
+	@Test
+	public void HighPriestsGroupLeader() throws Exception {
+		LeaderNonBishopric("LDSTools16");
+	}
+	
+	@Test
+	public void HighPriestsGroupFirstAssistant() throws Exception {
+		LeaderNonBishopric("LDSTools17");
+	}
+	
+	@Test
+	public void HighPriestsGroupSecondAssistant() throws Exception {
+		LeaderNonBishopric("LDSTools18");
+	}
+	
+	@Test
+	public void HighPriestsGroupSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools19");
+	}
+	
+	@Test
+	public void HighPriestsGroupAssistantSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools20");
+	}
+	
+	@Test
+	public void EldersQuorumPresident() throws Exception {
+		LeaderNonBishopric("LDSTools21");
+	}
+	
+	@Test
+	public void EldersQuorumFirstCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools22");
+	}
+	
+	@Test
+	public void EldersQuorumSecondCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools23");
+	}
+	
+	@Test
+	public void EldersQuorumSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools24");
+	}
+	
+	@Test
+	public void EldersQuorumAssistantSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools25");
+	}
+	
+	@Test
+	public void ReliefSocietyPresident() throws Exception {
+		LeaderNonBishopric("LDSTools26");
+	}
+	
+	@Test
+	public void ReliefSocietyFirstCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools27");
+	}
+	
+	@Test
+	public void ReliefSocietySecondCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools28");
+	}
+	
+		@Test
+	public void ReliefSocietySecretary() throws Exception {
+		LeaderNonBishopric("LDSTools29");
+	}
+	
+	@Test
+	public void ReliefSocietyAssistantSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools30");
+	}
+	
+	@Test
+	public void YoungMenPresident() throws Exception {
+		LeaderNonBishopric("LDSTools31");
+	}
+	
+	@Test
+	public void YoungMenFirstCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools32");
+	}
+	
+	@Test
+	public void YoungMenSecondCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools33");
+	}
+	
+	@Test
+	public void YoungMenSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools34");
+	}
+	
+	@Test
+	public void YoungWomenPresident() throws Exception {
+		LeaderNonBishopric("LDSTools35");
+	}
+	
+	@Test
+	public void YoungWomenFirstCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools36");
+	}
+	
+	@Test
+	public void YoungWomenSecondCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools37");
+	}
+	
+	@Test
+	public void YoungWomenSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools38");
+	}
+	
+	@Test
+	public void SundaySchoolPresident() throws Exception {
+		LeaderNonBishopric("LDSTools39");
+	}
+	
+	@Test
+	public void SundaySchoolFirstCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools40");
+	}
+	
+	@Test
+	public void SundaySchoolSecondCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools41");
+	}
+	
+	@Test
+	public void SundaySchoolSecretary() throws Exception {
+		LeaderNonBishopric("LDSTools42");
+	}
+	
+	@Test
+	public void PrimaryPresident() throws Exception {
+		LeaderNonBishopric("LDSTools43");
+	}
+	
+	@Test
+	public void PrimaryFirstCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools44");
+	}
+	
+	@Test
+	public void PrimarySecondCounselor() throws Exception {
+		LeaderNonBishopric("LDSTools45");
+	}
+	
+	@Test
+	public void PrimarySecretary() throws Exception {
+		LeaderNonBishopric("LDSTools46");
+	}
+
 	
 	//@Test
 	//public void loginCheckTest() throws Exception {
 	//	loginCheck();	
 	//}
 	
-	*/
+	
 	
 	
 	
@@ -418,7 +576,7 @@ public class LDSToolsiOS {
 		Thread.sleep(1000);
 		
 		//Check the reports - leadership only
-		checkReports(false);
+		checkReports(false, false);
 		
 
 	}
@@ -514,9 +672,42 @@ public class LDSToolsiOS {
 		Thread.sleep(1000);
 		
 		//Check the reports - leadership only
-		checkReports(true);
+		checkReports(true, true);
 		
 		
+	}
+	
+	
+	
+	public void LeaderNonBishopric(String leaderLogin) throws Exception {
+		syncLogIn(leaderLogin, "password1", "UAT" );
+		Thread.sleep(2000);
+		pinPage("1", "1", "3", "3", true);
+
+
+		//Check to see if the user can view the directory
+		Assert.assertTrue(checkElementTextViewRoboReturn("AFPEighteen, Member"));
+		Assert.assertFalse(checkElementTextViewRoboReturn("Vader, Darth"));
+
+		checkDirectoryUser(true, true, true, false, false);
+
+		Thread.sleep(1000);
+		//Check Drawer Items - If leader there should be a Reports item
+		checkDrawerItems(true);
+
+		Thread.sleep(1000);	
+		//Check various callings - all users should be able to access this information
+		checkCallings();
+
+		Thread.sleep(1000);
+		//Check Missionary drawer items - all user access
+		checkMissionary();
+	
+		Thread.sleep(1000);
+		//Check the reports - leadership only - true for bishopric rights, false for leaders and remove
+		//checkReports for non-leaders
+		checkReports(false, false);
+
 	}
 	
 	
@@ -2433,7 +2624,7 @@ public class LDSToolsiOS {
 	 * 
 	 * @throws Exception
 	 */
-	private void checkReports(boolean newUnit) throws Exception {
+	private void checkReports(boolean newUnit, boolean bishop) throws Exception {
 		//Reports
 		clickButtonByXpath("Drawer");
 		clickButtonByXpath("DrawerReports");
@@ -2444,7 +2635,7 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewReturn("Members with Callings"));
 		Assert.assertTrue(checkElementTextViewReturn("Members without Callings"));
 		Assert.assertTrue(checkElementTextViewReturn("New Members"));
-		Assert.assertTrue(checkElementTextViewReturn("Temple Recommend Status"));
+		//Assert.assertTrue(checkElementTextViewReturn("Temple Recommend Status"));
 		Assert.assertTrue(checkElementTextViewReturn("Unit Statistics"));
 		Assert.assertFalse(checkElementTextViewReturn("Death Star Reports"));
 		
@@ -2459,7 +2650,7 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewReturn("May 17, 2015"));
 		
 		//The new unit is only available for bishop
-		if (newUnit == true){
+		if (bishop == true){
 			Assert.assertTrue(checkElementTextViewReturn("Johnstone Ward"));
 		} else {
 			Assert.assertFalse(checkElementTextViewReturn("Johnstone Ward"));
@@ -2538,40 +2729,43 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewReturn("Joezmal, Loana"));
 		Assert.assertTrue(checkElementTextViewReturn("13"));
 		Assert.assertTrue(checkElementTextViewReturn("F"));
-		Assert.assertTrue(checkElementTextViewReturn("Mar 15, 2015"));
+		//Assert.assertTrue(checkElementTextViewReturn("Mar 15, 2015"));
 		Assert.assertTrue(checkElementTextViewReturn("Member"));
 		Assert.assertFalse(checkElementTextViewReturn("Hutt, Jabba"));
 		pressBackKey();
 		Thread.sleep(2000);
 		
-		//Temple Recommend Status
-		clickButtonByXpathTitleName("Temple Recommend Status");
-		Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15"));
-		Assert.assertFalse(checkElementTextViewReturn("Ahsoka, Tano"));
-		//Assert.assertTrue(checkElementTextViewReturn("Expired"));
-		
-		clickButtonByXpath("TopSort");
-		clickButtonByXpathTitleName("Active");
-		Assert.assertTrue(checkElementTextViewReturn("Betham, Maria"));
-		Assert.assertTrue(checkElementTextViewReturn("Jul 2016 (Active)"));
-		Assert.assertFalse(checkElementTextViewReturn("Maul, Darth"));
-		
-		clickButtonByXpath("TopSort");
-		clickButtonByXpathTitleName("Expiring");
-		Assert.assertTrue(checkElementTextViewReturn("Lavea, Lonise"));
-		Assert.assertFalse(checkElementTextViewReturn("Windu, Mace"));
-		
-		clickButtonByXpath("TopSort");
-		clickButtonByXpathTitleName("Expired");
-		Assert.assertTrue(checkElementTextViewReturn("Ami, Lealofi"));
-		Assert.assertFalse(checkElementTextViewReturn("Jinn, Qui-Gon"));
-		
-		clickButtonByXpath("TopSort");
-		clickButtonByXpathTitleName("Other");
-		Assert.assertTrue(checkElementTextViewReturn("Mene, Matagalu"));
-		Assert.assertFalse(checkElementTextViewReturn("Calrissian, Lando"));
-		pressBackKey();
-		Thread.sleep(2000);
+		if (newUnit == true ){
+			//Temple Recommend Status
+			clickButtonByXpathTitleName("Temple Recommend Status");
+			Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15"));
+			Assert.assertFalse(checkElementTextViewReturn("Ahsoka, Tano"));
+			//Assert.assertTrue(checkElementTextViewReturn("Expired"));
+			
+			clickButtonByXpath("TopSort");
+			clickButtonByXpathTitleName("Active");
+			Assert.assertTrue(checkElementTextViewReturn("Betham, Maria"));
+			Assert.assertTrue(checkElementTextViewReturn("Jul 2016 (Active)"));
+			Assert.assertFalse(checkElementTextViewReturn("Maul, Darth"));
+			
+			clickButtonByXpath("TopSort");
+			clickButtonByXpathTitleName("Expiring");
+			Assert.assertTrue(checkElementTextViewReturn("Lavea, Lonise"));
+			Assert.assertFalse(checkElementTextViewReturn("Windu, Mace"));
+			
+			clickButtonByXpath("TopSort");
+			clickButtonByXpathTitleName("Expired");
+			Assert.assertTrue(checkElementTextViewReturn("Ami, Lealofi"));
+			Assert.assertFalse(checkElementTextViewReturn("Jinn, Qui-Gon"));
+			
+			clickButtonByXpath("TopSort");
+			clickButtonByXpathTitleName("Other");
+			Assert.assertTrue(checkElementTextViewReturn("Mene, Matagalu"));
+			Assert.assertFalse(checkElementTextViewReturn("Calrissian, Lando"));
+			pressBackKey();
+			Thread.sleep(2000);
+		}
+
 		
 		//Unit Statistics
 		clickButtonByXpathTitleName("Unit Statistics");
