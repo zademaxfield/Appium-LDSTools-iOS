@@ -152,7 +152,7 @@ public class LDSToolsiOS {
     }	
 
 	
-    /*
+    
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -179,7 +179,7 @@ public class LDSToolsiOS {
 		//PatriarchOtherWards();
 
 	}
-	*/
+	
 	
 
 	public void justForTesting() throws Exception {
@@ -212,7 +212,7 @@ public class LDSToolsiOS {
 		
 	
 	
-	
+	/*
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -433,7 +433,7 @@ public class LDSToolsiOS {
 	//	loginCheck();	
 	//}
 	
-	
+	*/
 	
 	
 	
@@ -2443,12 +2443,12 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewRoboReturn("Atia, Aviata Seualuga"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Bishopric Second Counselor"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Faapili, Muipu"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Ward Executive Secretary"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Sitivi, Sitivi"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Ward Executive Secretary"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Sitivi, Sitivi"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Ward Clerk"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Tutunoa, Ualesi Junior, Jr"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Ward Assistant Clerk"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Sitivi, Tama Kiliona"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Ward Assistant Clerk"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Sitivi, Tama Kiliona"));
 		//pressBackKey();
 		clickButtonByXpath("TopOrganizations");
 		
@@ -2499,10 +2499,12 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Young Men");
 		clickItemByXpathRoboText("Young Men Presidency");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Young Men President"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Lavea, Vaelaa"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Lafaele"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Young Men First Counselor"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Peaulele"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Poai, Mikaele"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Young Men Second Counselor"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Faamoetauloa Panapa Jr, Panapa Jnr"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Young Men Secretary"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Venasio Fainuu, Fogavai"));
 		clickButtonByXpath("TopYoungMen");
 		Thread.sleep(2000);
@@ -2528,8 +2530,8 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Young Women Presidency");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Young Women President"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Tutunoa, Lusi"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Young Women Secretary"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Lavea, Lonise"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Young Women First Counselor"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Etevise"));
 		clickButtonByXpath("TopBack");
 		//clickButtonByXpath("TopYoungWomen");
 		//pressBackKey();
@@ -2544,8 +2546,8 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School President"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Lealaiauloto, Uana Iosefa Sao"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School First Counselor"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Mene, Sitivi"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School Second Counselor"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Mene, Sitivi"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School Second Counselor"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Apofasa, Sasa'a"));
 		clickButtonByXpath("TopBack");
 		//clickButtonByXpath("TopSundaySchool");
@@ -2559,11 +2561,11 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Primary");
 		clickItemByXpathRoboText("Primary Presidency");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Primary President"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Tutulu"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Faamoe, Talalelagi"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Primary First Counselor"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Ami, Lealofi"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Primary Second Counselor"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Fepuleai, Malele Seuamuli"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Primary Second Counselor"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Tulia, Faagalo"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Primary Secretary"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Samu, Luisa"));
 		clickButtonByXpath("TopBack");
@@ -2678,8 +2680,8 @@ public class LDSToolsiOS {
 		
 		//Members with Callings
 		clickButtonByXpathTitleName("Members with Callings");
-		Assert.assertTrue(checkElementTextViewReturn("Ami, Lealofi"));
-		Assert.assertTrue(checkElementTextViewReturn("Primary First Counselor (1 year, 3 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Ami, Samu"));
+		Assert.assertTrue(checkElementTextViewReturn("Bishop (1 year, 8 months)"));
 		Assert.assertFalse(checkElementTextViewReturn("Skywalker, Anakin"));
 		
 		clickButtonByXpath("TopSort");
@@ -2690,14 +2692,14 @@ public class LDSToolsiOS {
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Duration");
-		Assert.assertTrue(checkElementTextViewReturn("Primary First Counselor"));
-		Assert.assertTrue(checkElementTextViewReturn("Sitivi, Tama Kiliona"));
+		Assert.assertTrue(checkElementTextViewReturn("Young Women President"));
+		Assert.assertTrue(checkElementTextViewReturn("Tutunoa, Lusi"));
 		Assert.assertFalse(checkElementTextViewReturn("Amidala, Padme"));
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Not Set Apart");
-		Assert.assertTrue(checkElementTextViewReturn("Ward Assistant Clerk (3 years, 3 months)"));
-		Assert.assertTrue(checkElementTextViewReturn("Sitivi, Tama Kiliona"));
+		Assert.assertTrue(checkElementTextViewReturn("Elders Quorum First Counselor (2 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Tautali, Tamafaiga"));
 		Assert.assertFalse(checkElementTextViewReturn("P0, C3"));
 		pressBackKey();
 		Thread.sleep(2000);
@@ -2771,8 +2773,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("599  "));
-		Assert.assertTrue(checkElementTextViewReturn("270  "));
+		Assert.assertTrue(checkElementTextViewReturn("600  "));
+		Assert.assertTrue(checkElementTextViewReturn("271  "));
 		Assert.assertTrue(checkElementTextViewReturn("14  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
