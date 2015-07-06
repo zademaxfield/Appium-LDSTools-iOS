@@ -130,9 +130,9 @@ public class LDSToolsiOS {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "iOS");
-        capabilities.setCapability(CapabilityType.VERSION, "8.3");
+        capabilities.setCapability(CapabilityType.VERSION, "8.4");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
-        capabilities.setCapability("platformVersion", "8.3");
+        capabilities.setCapability("platformVersion", "8.4");
         //capabilities.setCapability("device","iPhone 5s");
         capabilities.setCapability("deviceName","iPhone 6");
 
@@ -169,12 +169,12 @@ public class LDSToolsiOS {
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
-		LeaderNonBishopric("LDSTools22");
+		//LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
 		//ChristieWhiting();
-		//CliffHigby();
+		CliffHigby();
 		//KevinPalmer();
 		//PatriarchOtherWards();
 
@@ -211,8 +211,8 @@ public class LDSToolsiOS {
 	}
 		
 	
-	
 	/*
+	
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -433,8 +433,8 @@ public class LDSToolsiOS {
 	//	loginCheck();	
 	//}
 	
-	*/
 	
+	*/
 	
 	
 	
@@ -1329,7 +1329,7 @@ public class LDSToolsiOS {
 		loginProxyData("295740465",
 				"/7u191/5u504505/",
 				"p428/467u376892/28u381772/:p1711/59u1004603/22u388300/:p1788/467u376892/28u381772/:p1680/32u1326376/:p789/8u1006967/1u563013/:p1887/14u1004816/467u376892/",
-				"Proxy - Test", "CliffHigby");
+				"P-TEST", "proxyt");
 		
 		//true will setup ping for a non-leader
 		pinPage("1", "1", "3", "3", true);
@@ -2162,42 +2162,49 @@ public class LDSToolsiOS {
 		//valid enteries "Production", "UAT", "Proxy - UAT", "Proxy - Test"
 		if (!chooseNetwork.equals("Production")) {
 			Thread.sleep(1000);
-			longPressByTextView("Sign in to your LDS Account");
-			Thread.sleep(1000);
-			longPressByTextView("Sign in to your LDS Account");
-			Thread.sleep(1000);
-			clickButtonByXpath("Menu");
-			clickButtonByXpathTitleName("Settings");
-			//Thread.sleep(1000);
-			//scrollDown("Sign Out", 40 );
+			clickButtonByXpath("TopHelp");
+			clickButtonByXpath("About");
+			longPressByXpath("Logo");
+
+			clickButtonByXpath("OK");
+
+			clickButtonByXpath("TopHelp");
+
+			clickButtonByXpath("DeveloperSettings");
+			clickButtonByXpath("Environment");
+			
+			
+			clickButtonByXpath(chooseNetwork);
+			
+			clickButtonByXpath("TopDeveloper");
 			Thread.sleep(2000);
-			scrollDown("Network Environment", -1000 );
-			Thread.sleep(2000);
-			clickButtonByXpathPopoutMenu(chooseNetwork);
-			Thread.sleep(2000);
-			scrollDown("px_i", -1000 );
-			Thread.sleep(2000);
-			sendTextbyXpath("AlertEditText", IndividualId);
-			clickButtonByXpath("AlertOK");
-			Thread.sleep(2000);
-			scrollDown("px_u", -1000 );
-			Thread.sleep(2000);
-			sendTextbyXpath("AlertEditText", units);
-			clickButtonByXpath("AlertOK");
-			Thread.sleep(2000);
-			scrollDown("px_p", -1000 );
-			Thread.sleep(2000);
-			sendTextbyXpath("AlertEditText", positions);
-			clickButtonByXpath("AlertOK");
-			clickButtonByXpath("Back");
-			Thread.sleep(5000);
+			
+			
+			//Set the ID
+			clickButtonByXpath("Id");
+			sendTextbyXpath("HeaderAlertTextId", IndividualId );
+			clickButtonByXpath("HeaderOK");
+			
+			//Set the Positions
+			clickButtonByXpath("Units");
+			sendTextbyXpath("HeaderAlertTextUnits", units );
+			clickButtonByXpath("HeaderOK");
+			
+			//Set the Positions
+			clickButtonByXpath("Positions");
+			sendTextbyXpath("HeaderAlertTextPositions", positions );
+			clickButtonByXpath("HeaderOK");
+			
+			clickButtonByXpath("TopHelp");
+			Thread.sleep(4000);
+			clickButtonByXpath("TopSignIn");
 		}
 		//sendTextbyXpath("LoginUsername", "LDSTools14");
 		//sendTextbyXpath("LoginPassword", "toolstester");
-		sendTextbyXpath("LoginUsername", userName );
-		sendTextbyXpath("LoginPassword", "password1");
+		sendTextbyXpath2("LoginUsername", userName );
+		sendTextbyXpath2("LoginPassword", "toolstester");
 		Thread.sleep(1000);
-		clickButtonByXpath("SignInButton");
+		clickButtonByXpath("DoneButton");
 		Thread.sleep(4000);
 		waitForTextToDisappear("DownloadingSync", 500 );
 		Thread.sleep(2000);
@@ -2437,8 +2444,8 @@ public class LDSToolsiOS {
 		
 		//Bishopric
 		clickItemByXpathRoboText("Bishopric");
-		Assert.assertTrue(checkElementTextViewRoboReturn("Bishop"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Ami, Samu"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Bishop"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Ami, Samu"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Bishopric First Counselor"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("AFPMisc, Member15"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Bishopric Second Counselor"));
@@ -2449,6 +2456,8 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewRoboReturn("Tutunoa, Ualesi Junior, Jr"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Ward Assistant Clerk"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Sitivi, Tama Kiliona"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Ward Assistant Clerk--Membership"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Whitesel, Jason Raymond"));
 		//pressBackKey();
 		clickButtonByXpath("TopOrganizations");
 		
@@ -2684,14 +2693,14 @@ public class LDSToolsiOS {
 		
 		//Members with Callings
 		clickButtonByXpathTitleName("Members with Callings");
-		Assert.assertTrue(checkElementTextViewReturn("Ami, Samu"));
-		Assert.assertTrue(checkElementTextViewReturn("Bishop (1 year, 9 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15"));
+		Assert.assertTrue(checkElementTextViewReturn("Bishopric First Counselor (Less Than 1 Month)"));
 		Assert.assertFalse(checkElementTextViewReturn("Skywalker, Anakin"));
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Organization");
-		Assert.assertTrue(checkElementTextViewReturn("Bishop"));
-		Assert.assertTrue(checkElementTextViewReturn("Ami, Samu (1 year, 9 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Bishopric First Counselor"));
+		Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15 (Less Than 1 Month)"));
 		Assert.assertFalse(checkElementTextViewReturn("Kenobi, Obi-Wan"));
 		
 		clickButtonByXpath("TopSort");
@@ -2777,8 +2786,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("602  "));
-		Assert.assertTrue(checkElementTextViewReturn("271  "));
+		Assert.assertTrue(checkElementTextViewReturn("603  "));
+		Assert.assertTrue(checkElementTextViewReturn("272  "));
 		Assert.assertTrue(checkElementTextViewReturn("14  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
