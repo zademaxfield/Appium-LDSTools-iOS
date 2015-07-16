@@ -133,7 +133,7 @@ public class LDSToolsiOS {
         capabilities.setCapability(CapabilityType.VERSION, "8.4");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
         capabilities.setCapability("platformVersion", "8.4");
-        //capabilities.setCapability("device","iPhone 5s");
+        //capabilities.setCapability("deviceName","iPhone 5s");
         capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
@@ -169,12 +169,12 @@ public class LDSToolsiOS {
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
-		//LeaderNonBishopric("LDSTools22");
+		LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
 		//ChristieWhiting();
-		CliffHigby();
+		//CliffHigby();
 		//KevinPalmer();
 		//PatriarchOtherWards();
 
@@ -211,8 +211,8 @@ public class LDSToolsiOS {
 	}
 		
 	
-	/*
 	
+	/*
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -2137,6 +2137,10 @@ public class LDSToolsiOS {
 		//Thread.sleep(1000);
 		//clickButtonByXpath("SignInButton");
 		Thread.sleep(4000);
+		
+		
+		unitsToSync();
+		
 		waitForTextToDisappear("DownloadingSync", 500 );
 		Thread.sleep(8000);
 	}
@@ -2151,6 +2155,8 @@ public class LDSToolsiOS {
 		//Thread.sleep(1000);
 		//clickButtonByXpath("SignInButton");
 		Thread.sleep(4000);
+		unitsToSync();
+		Thread.sleep(2000);
 		waitForTextToDisappear("DownloadingSync", 500 );
 		Thread.sleep(8000);
 	}
@@ -2206,11 +2212,14 @@ public class LDSToolsiOS {
 		Thread.sleep(1000);
 		clickButtonByXpath("DoneButton");
 		Thread.sleep(4000);
-		waitForTextToDisappear("DownloadingSync", 500 );
+		
+		unitsToSync();
+		Thread.sleep(2000);
+		waitForTextToDisappear("DownloadingSync", 900 );
 		Thread.sleep(2000);
 		
 		//Calendar doesn't work with proxy data so we will just clear the alert. 
-		clickButtonByXpath("AlertOK");
+		//clickButtonByXpath("AlertOK");
 		
 	}
 
@@ -2625,9 +2634,9 @@ public class LDSToolsiOS {
 		//Missionary
 		clickButtonByXpath("Drawer");
 		clickButtonByXpath("DrawerMissionary");
-		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Tearoa Tuala"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Kawika Tupuola"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Samoa Apia Mission"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Afa Avelima Alaivaa"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Dallin Fawcett"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Samoa Apia Mission"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Lafaele"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Mission Leader"));
@@ -2658,17 +2667,17 @@ public class LDSToolsiOS {
 		//Check the members moved out report
 		//Should have a ( ) with the age by the birth date
 		clickButtonByXpathTitleName("Members Moved Out");
-		Assert.assertTrue(checkElementTextViewReturn("Wilson, Nora"));
+		Assert.assertTrue(checkElementTextViewReturn("Brimley, Steve"));
 		//Birth Date
 		//TODO need to have the age calculated
-		Assert.assertTrue(checkElementTextViewReturn("Oct 10, 1936 (78)"));
-		Assert.assertTrue(checkElementTextViewReturn("May 17, 2015"));
+		Assert.assertTrue(checkElementTextViewReturn("Jul 2, 1963 (52)"));
+		Assert.assertTrue(checkElementTextViewReturn("Jul 6, 2015"));
 		
 		//The new unit is only available for bishop
 		if (bishop == true){
-			Assert.assertTrue(checkElementTextViewReturn("Johnstone Ward"));
+			Assert.assertTrue(checkElementTextViewReturn("Cedar Hills 8th Ward"));
 		} else {
-			Assert.assertFalse(checkElementTextViewReturn("Johnstone Ward"));
+			Assert.assertFalse(checkElementTextViewReturn("Cedar Hills 8th Ward"));
 		}
 		Assert.assertFalse(checkElementTextViewReturn("Solo, Han"));
 		
@@ -2711,7 +2720,7 @@ public class LDSToolsiOS {
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Not Set Apart");
-		Assert.assertTrue(checkElementTextViewReturn("Elders Quorum First Counselor (2 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Elders Quorum First Counselor (3 months)"));
 		Assert.assertTrue(checkElementTextViewReturn("Tautali, Tamafaiga"));
 		Assert.assertFalse(checkElementTextViewReturn("P0, C3"));
 		pressBackKey();
@@ -2786,8 +2795,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("603  "));
-		Assert.assertTrue(checkElementTextViewReturn("272  "));
+		Assert.assertTrue(checkElementTextViewReturn("602  "));
+		Assert.assertTrue(checkElementTextViewReturn("271  "));
 		Assert.assertTrue(checkElementTextViewReturn("14  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
@@ -2825,6 +2834,19 @@ public class LDSToolsiOS {
 		if (myCheck == 1) {
 			clickButtonByXpath("OK");
 			
+		}
+	}
+	
+	//TODO: Need to be able to select 1 to 12 units
+	/** unitsToSync()
+	 * If there are more than 12 units this will select the Savaii Stake
+	 * @throws Exception
+	 */
+	private void unitsToSync() throws Exception {
+		if (checkElementTextViewReturn("Select up to 12 units to sync.")) {
+			clickButtonByXpathTitleName("Savaii Samoa Fagamalo Stake");
+			clickButtonByXpath("SyncButton");
+			Thread.sleep(2000);
 		}
 	}
 	
