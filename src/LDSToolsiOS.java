@@ -158,7 +158,7 @@ public class LDSToolsiOS {
 		Thread.sleep(8000);
 		//justForTesting();	
 
-		//under18HeadofHouse();	
+		under18HeadofHouse();	
 		//bishopricCounselorAndWardClerk();	
 		//bishopMemberOfSeparateStake();	
 		//editCurrentUser();	
@@ -169,7 +169,7 @@ public class LDSToolsiOS {
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
-		LeaderNonBishopric("LDSTools22");
+		//LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
@@ -433,8 +433,8 @@ public class LDSToolsiOS {
 	//	loginCheck();	
 	//}
 	
-	
 	*/
+	
 	
 	
 	
@@ -453,6 +453,7 @@ public class LDSToolsiOS {
 		//true will setup ping for a non-leader
 		pinPage("1", "1", "3", "3", true);
 		
+		Thread.sleep(5000);
 		//Check to see if the user can view the directory
 		Assert.assertTrue(checkElementTextViewRoboReturn("Aaron, Jane"));
 		Assert.assertFalse(checkElementTextViewRoboReturn("Vader, Darth"));
@@ -2675,9 +2676,9 @@ public class LDSToolsiOS {
 		
 		//The new unit is only available for bishop
 		if (bishop == true){
-			Assert.assertTrue(checkElementTextViewReturn("Cedar Hills 8th Ward"));
+			Assert.assertTrue(checkElementTextViewReturn("Cedar Hills  8th Ward"));
 		} else {
-			Assert.assertFalse(checkElementTextViewReturn("Cedar Hills 8th Ward"));
+			Assert.assertFalse(checkElementTextViewReturn("Cedar Hills  8th Ward"));
 		}
 		Assert.assertFalse(checkElementTextViewReturn("Solo, Han"));
 		
@@ -2703,13 +2704,13 @@ public class LDSToolsiOS {
 		//Members with Callings
 		clickButtonByXpathTitleName("Members with Callings");
 		Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15"));
-		Assert.assertTrue(checkElementTextViewReturn("Bishopric First Counselor (Less Than 1 Month)"));
+		Assert.assertTrue(checkElementTextViewReturn("Bishopric First Counselor (1 month)"));
 		Assert.assertFalse(checkElementTextViewReturn("Skywalker, Anakin"));
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Organization");
 		Assert.assertTrue(checkElementTextViewReturn("Bishopric First Counselor"));
-		Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15 (Less Than 1 Month)"));
+		Assert.assertTrue(checkElementTextViewReturn("AFPMisc, Member15 (1 month)"));
 		Assert.assertFalse(checkElementTextViewReturn("Kenobi, Obi-Wan"));
 		
 		clickButtonByXpath("TopSort");
@@ -2774,7 +2775,7 @@ public class LDSToolsiOS {
 			
 			clickButtonByXpath("TopSort");
 			clickButtonByXpathTitleName("Expiring");
-			Assert.assertTrue(checkElementTextViewReturn("Lavea, Lonise"));
+			Assert.assertTrue(checkElementTextViewReturn("Tutunoa, Lusi"));
 			Assert.assertFalse(checkElementTextViewReturn("Windu, Mace"));
 			
 			clickButtonByXpath("TopSort");
@@ -2795,9 +2796,9 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("602  "));
+		Assert.assertTrue(checkElementTextViewReturn("603  "));
 		Assert.assertTrue(checkElementTextViewReturn("271  "));
-		Assert.assertTrue(checkElementTextViewReturn("14  "));
+		Assert.assertTrue(checkElementTextViewReturn("15  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
 	
