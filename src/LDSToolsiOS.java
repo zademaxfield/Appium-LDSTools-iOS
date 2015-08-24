@@ -152,7 +152,7 @@ public class LDSToolsiOS {
     }	
 
 	
-    
+    /*
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -162,10 +162,10 @@ public class LDSToolsiOS {
 		//bishopricCounselorAndWardClerk();	
 		//bishopMemberOfSeparateStake();	
 		//editCurrentUser();	
-		editOtherUser();	
+		//editOtherUser();	
 		//editOtherUserInvalidPhone();	
 		//editOtherUserInvalidEmail();	
-		//editVisibility();	
+		editVisibility();	
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
@@ -179,7 +179,7 @@ public class LDSToolsiOS {
 		//PatriarchOtherWards();
 
 	}
-	
+	*/
 	
 
 	public void justForTesting() throws Exception {
@@ -212,7 +212,7 @@ public class LDSToolsiOS {
 		
 	
 	
-	/*
+	
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -433,7 +433,7 @@ public class LDSToolsiOS {
 	//	loginCheck();	
 	//}
 	
-	*/
+	
 	
 	
 	
