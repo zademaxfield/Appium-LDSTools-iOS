@@ -133,8 +133,8 @@ public class LDSToolsiOS {
         capabilities.setCapability(CapabilityType.VERSION, "8.4");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
         capabilities.setCapability("platformVersion", "8.4");
-        //capabilities.setCapability("deviceName","iPhone 5s");
-        capabilities.setCapability("deviceName","iPhone 6");
+        capabilities.setCapability("deviceName","iPhone 5s");
+        //capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
         capabilities.setCapability("newCommandTimeout","600");
@@ -165,11 +165,11 @@ public class LDSToolsiOS {
 		//editOtherUser();	
 		//editOtherUserInvalidPhone();	
 		//editOtherUserInvalidEmail();	
-		editVisibility();	
+		//editVisibility();	
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
-		//LeaderNonBishopric("LDSTools22");
+		LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
@@ -2706,13 +2706,13 @@ public class LDSToolsiOS {
 		//Members with Callings
 		clickButtonByXpathTitleName("Members with Callings");
 		Assert.assertTrue(checkElementTextViewReturn("Ami, Christian"));
-		Assert.assertTrue(checkElementTextViewReturn("Beehive President (3 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Beehive President (4 months)"));
 		Assert.assertFalse(checkElementTextViewReturn("Skywalker, Anakin"));
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Organization");
 		Assert.assertTrue(checkElementTextViewReturn("Bishopric Second Counselor"));
-		Assert.assertTrue(checkElementTextViewReturn("Faapili, Muipu (1 year, 10 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Faapili, Muipu (1 year, 11 months)"));
 		Assert.assertFalse(checkElementTextViewReturn("Kenobi, Obi-Wan"));
 		
 		clickButtonByXpath("TopSort");
@@ -2798,8 +2798,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("603  "));
-		Assert.assertTrue(checkElementTextViewReturn("270  "));
+		Assert.assertTrue(checkElementTextViewReturn("608  "));
+		Assert.assertTrue(checkElementTextViewReturn("272  "));
 		Assert.assertTrue(checkElementTextViewReturn("15  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
