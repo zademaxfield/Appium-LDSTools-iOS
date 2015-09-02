@@ -133,8 +133,8 @@ public class LDSToolsiOS {
         capabilities.setCapability(CapabilityType.VERSION, "8.4");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
         capabilities.setCapability("platformVersion", "8.4");
-        capabilities.setCapability("deviceName","iPhone 5s");
-        //capabilities.setCapability("deviceName","iPhone 6");
+        //capabilities.setCapability("deviceName","iPhone 5s");
+        capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
         capabilities.setCapability("newCommandTimeout","600");
@@ -151,8 +151,8 @@ public class LDSToolsiOS {
 
     }	
 
-	
-    /*
+	/*
+    
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -2798,8 +2798,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("608  "));
-		Assert.assertTrue(checkElementTextViewReturn("272  "));
+		Assert.assertTrue(checkElementTextViewReturn("607  "));
+		Assert.assertTrue(checkElementTextViewReturn("271  "));
 		Assert.assertTrue(checkElementTextViewReturn("15  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
