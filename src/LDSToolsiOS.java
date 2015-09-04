@@ -133,8 +133,8 @@ public class LDSToolsiOS {
         capabilities.setCapability(CapabilityType.VERSION, "8.4");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
         capabilities.setCapability("platformVersion", "8.4");
-        //capabilities.setCapability("deviceName","iPhone 5s");
-        capabilities.setCapability("deviceName","iPhone 6");
+        capabilities.setCapability("deviceName","iPhone 5s");
+        //capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
         capabilities.setCapability("newCommandTimeout","600");
@@ -151,8 +151,8 @@ public class LDSToolsiOS {
 
     }	
 
-	/*
-    
+	
+    /*
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -2670,11 +2670,11 @@ public class LDSToolsiOS {
 		//Check the members moved out report
 		//Should have a ( ) with the age by the birth date
 		clickButtonByXpathTitleName("Members Moved Out");
-		Assert.assertTrue(checkElementTextViewReturn("Brimley, Steve"));
+		Assert.assertTrue(checkElementTextViewReturn("Eubank, Kent"));
 		//Birth Date
 		//TODO need to have the age calculated
-		Assert.assertTrue(checkElementTextViewReturn("Jul 2, 1963 (52)"));
-		Assert.assertTrue(checkElementTextViewReturn("Jul 6, 2015"));
+		Assert.assertTrue(checkElementTextViewReturn("Aug 15, 1973 (42)"));
+		Assert.assertTrue(checkElementTextViewReturn("Jul 31, 2015"));
 		
 		//The new unit is only available for bishop
 		if (bishop == true){
@@ -2754,7 +2754,7 @@ public class LDSToolsiOS {
 		//New Members
 		clickButtonByXpathTitleName("New Members");
 		Assert.assertTrue(checkElementTextViewReturn("Joezmal, Loana"));
-		Assert.assertTrue(checkElementTextViewReturn("13"));
+		Assert.assertTrue(checkElementTextViewReturn("14"));
 		Assert.assertTrue(checkElementTextViewReturn("F"));
 		//Assert.assertTrue(checkElementTextViewReturn("Mar 15, 2015"));
 		Assert.assertTrue(checkElementTextViewReturn("Member"));
@@ -2798,8 +2798,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("607  "));
-		Assert.assertTrue(checkElementTextViewReturn("271  "));
+		Assert.assertTrue(checkElementTextViewReturn("610  "));
+		Assert.assertTrue(checkElementTextViewReturn("273  "));
 		Assert.assertTrue(checkElementTextViewReturn("15  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
