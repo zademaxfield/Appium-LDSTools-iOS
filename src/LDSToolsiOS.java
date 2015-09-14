@@ -152,7 +152,7 @@ public class LDSToolsiOS {
     }	
 
 	
-    /*
+    
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -179,7 +179,7 @@ public class LDSToolsiOS {
 		//PatriarchOtherWards();
 
 	}
-	*/
+	
 	
 
 	public void justForTesting() throws Exception {
@@ -212,7 +212,7 @@ public class LDSToolsiOS {
 		
 	
 	
-	
+	/*
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -432,8 +432,8 @@ public class LDSToolsiOS {
 	//public void loginCheckTest() throws Exception {
 	//	loginCheck();	
 	//}
-	
-	
+	*/
+
 	
 	
 	
@@ -2570,7 +2570,7 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Sunday School Presidency");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School President"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Lealaiauloto, Uana Iosefa Sao"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School First Counselor"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School First Counselor"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Mene, Sitivi"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Sunday School Second Counselor"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Apofasa, Sasa'a"));
@@ -2670,17 +2670,17 @@ public class LDSToolsiOS {
 		//Check the members moved out report
 		//Should have a ( ) with the age by the birth date
 		clickButtonByXpathTitleName("Members Moved Out");
-		Assert.assertTrue(checkElementTextViewReturn("Eubank, Kent"));
+		Assert.assertTrue(checkElementTextViewReturn("Aabala, Lola"));
 		//Birth Date
 		//TODO need to have the age calculated
-		Assert.assertTrue(checkElementTextViewReturn("Aug 15, 1973 (42)"));
-		Assert.assertTrue(checkElementTextViewReturn("Jul 31, 2015"));
+		Assert.assertTrue(checkElementTextViewReturn("Nov 11, 1960 (54)"));
+		Assert.assertTrue(checkElementTextViewReturn("Sep 6, 2015"));
 		
 		//The new unit is only available for bishop
 		if (bishop == true){
-			Assert.assertTrue(checkElementTextViewReturn("Cedar Hills  8th Ward"));
+			Assert.assertTrue(checkElementTextViewReturn("Paia Ward"));
 		} else {
-			Assert.assertFalse(checkElementTextViewReturn("Cedar Hills  8th Ward"));
+			Assert.assertFalse(checkElementTextViewReturn("Paia Ward"));
 		}
 		Assert.assertFalse(checkElementTextViewReturn("Solo, Han"));
 		
@@ -2798,8 +2798,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("610  "));
-		Assert.assertTrue(checkElementTextViewReturn("273  "));
+		Assert.assertTrue(checkElementTextViewReturn("601  "));
+		Assert.assertTrue(checkElementTextViewReturn("269  "));
 		Assert.assertTrue(checkElementTextViewReturn("15  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
