@@ -130,11 +130,11 @@ public class LDSToolsiOS {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "iOS");
-        capabilities.setCapability(CapabilityType.VERSION, "8.4");
+        capabilities.setCapability(CapabilityType.VERSION, "9.0");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
-        capabilities.setCapability("platformVersion", "8.4");
-        capabilities.setCapability("deviceName","iPhone 5s");
-        //capabilities.setCapability("deviceName","iPhone 6");
+        capabilities.setCapability("platformVersion", "9.0");
+        //capabilities.setCapability("deviceName","iPhone 5s");
+        capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
         capabilities.setCapability("newCommandTimeout","600");
@@ -433,7 +433,7 @@ public class LDSToolsiOS {
 	//	loginCheck();	
 	//}
 	*/
-
+	
 	
 	
 	
@@ -2488,8 +2488,8 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Elders Quorum Presidency");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Elders Quorum President"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Tutunoa, Joe Liuafi"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Elders Quorum First Counselor"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Tautali, Tamafaiga"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Elders Quorum First Counselor"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Tautali, Tamafaiga"));
 		clickButtonByXpath("TopBack");
 		//pressBackKey();
 		Thread.sleep(2000);
@@ -2618,8 +2618,8 @@ public class LDSToolsiOS {
 		clickItemByXpathRoboText("Music");
 		Assert.assertTrue(checkElementTextViewRoboReturn("Music Adviser"));
 		//Assert.assertTrue(checkElementTextViewRoboReturn("Frost,Sato'a"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Organist or Pianist"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Betham, Maria"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Organist or Pianist"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Betham, Maria"));
 		clickButtonByXpath("TopOtherCallings");
 		
 		//pressBackKey();
@@ -2670,11 +2670,11 @@ public class LDSToolsiOS {
 		//Check the members moved out report
 		//Should have a ( ) with the age by the birth date
 		clickButtonByXpathTitleName("Members Moved Out");
-		Assert.assertTrue(checkElementTextViewReturn("Aabala, Lola"));
+		Assert.assertTrue(checkElementTextViewReturn("Betham, Scott"));
 		//Birth Date
 		//TODO need to have the age calculated
-		Assert.assertTrue(checkElementTextViewReturn("Nov 11, 1960 (54)"));
-		Assert.assertTrue(checkElementTextViewReturn("Sep 6, 2015"));
+		Assert.assertTrue(checkElementTextViewReturn("Jan 20, 1982 (33)"));
+		Assert.assertTrue(checkElementTextViewReturn("Sep 21, 2015"));
 		
 		//The new unit is only available for bishop
 		if (bishop == true){
@@ -2712,7 +2712,7 @@ public class LDSToolsiOS {
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Organization");
 		Assert.assertTrue(checkElementTextViewReturn("Bishopric Second Counselor"));
-		Assert.assertTrue(checkElementTextViewReturn("Faapili, Muipu (1 year, 11 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Faapili, Muipu (2 years)"));
 		Assert.assertFalse(checkElementTextViewReturn("Kenobi, Obi-Wan"));
 		
 		clickButtonByXpath("TopSort");
@@ -2723,8 +2723,8 @@ public class LDSToolsiOS {
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Not Set Apart");
-		Assert.assertTrue(checkElementTextViewReturn("Elders Quorum First Counselor (4 months)"));
-		Assert.assertTrue(checkElementTextViewReturn("Tautali, Tamafaiga"));
+		Assert.assertTrue(checkElementTextViewReturn("Young Men First Counselor (4 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Tutunoa, Joe Liuafi"));
 		Assert.assertFalse(checkElementTextViewReturn("P0, C3"));
 		pressBackKey();
 		Thread.sleep(2000);
@@ -2798,8 +2798,8 @@ public class LDSToolsiOS {
 		clickButtonByXpathTitleName("Unit Statistics");
 		Thread.sleep(2000);
 		Assert.assertTrue(checkElementTextViewReturn("TOTAL MEMBERS"));
-		Assert.assertTrue(checkElementTextViewReturn("601  "));
-		Assert.assertTrue(checkElementTextViewReturn("269  "));
+		Assert.assertTrue(checkElementTextViewReturn("596  "));
+		Assert.assertTrue(checkElementTextViewReturn("268  "));
 		Assert.assertTrue(checkElementTextViewReturn("15  "));
 		Assert.assertFalse(checkElementTextViewReturn("8675309  "));
 	}
