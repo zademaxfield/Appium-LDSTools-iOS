@@ -133,8 +133,8 @@ public class LDSToolsiOS {
         capabilities.setCapability(CapabilityType.VERSION, "9.0");
         capabilities.setCapability(CapabilityType.PLATFORM, "Mac");
         capabilities.setCapability("platformVersion", "9.0");
-        //capabilities.setCapability("deviceName","iPhone 5s");
-        capabilities.setCapability("deviceName","iPhone 6");
+        capabilities.setCapability("deviceName","iPhone 5");
+        //capabilities.setCapability("deviceName","iPhone 6");
 
         capabilities.setCapability("automationName","appium");
         capabilities.setCapability("newCommandTimeout","600");
@@ -152,7 +152,7 @@ public class LDSToolsiOS {
     }	
 
 	
-    
+    /*
 	@Test
 	public void simpleTest() throws Exception {
 		Thread.sleep(8000);
@@ -179,7 +179,7 @@ public class LDSToolsiOS {
 		PatriarchOtherWards();
 
 	}
-	
+	*/
 	
 
 	public void justForTesting() throws Exception {
@@ -212,7 +212,7 @@ public class LDSToolsiOS {
 		
 	
 	
-	/*
+	
     @Rule
     public Retry retry = new Retry(3);
 	
@@ -455,7 +455,7 @@ public class LDSToolsiOS {
 	//public void loginCheckTest() throws Exception {
 	//	loginCheck();	
 	//}
-	*/
+	
 	
 	
 	
@@ -2506,8 +2506,9 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewRoboReturn("Faamoe, Panapa Filifili"));
 		clickButtonByXpath("TopBack");
 		//pressBackKey();
-		Thread.sleep(2000);
-		clickButtonByXpath("TopOrganizations");
+		Thread.sleep(4000);
+		clickButtonByXpath("TopBack");
+		//clickButtonByXpath("TopOrganizations");
 		//pressBackKey();
 		
 		//Elders Quorum
@@ -2632,7 +2633,8 @@ public class LDSToolsiOS {
 		Assert.assertTrue(checkElementTextViewRoboReturn("Mission Leader"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Lafaele"));
 		//pressBackKey();
-		clickButtonByXpath("TopOrganizations");
+		clickButtonByXpath("TopBack");
+		//clickButtonByXpath("TopOrganizations");
 		
 		
 		//Other Callings
