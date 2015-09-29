@@ -169,14 +169,14 @@ public class LDSToolsiOS {
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
-		LeaderNonBishopric("LDSTools22");
+		//LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
 		//ChristieWhiting();
 		//CliffHigby();
 		//KevinPalmer();
-		//PatriarchOtherWards();
+		PatriarchOtherWards();
 
 	}
 	
@@ -427,7 +427,30 @@ public class LDSToolsiOS {
 		LeaderNonBishopric("LDSTools46");
 	}
 
+	@Test
+	public void ChristieWhitingTest() throws Exception {
+		ChristieWhiting();
+	}
 	
+	@Test
+	public void CliffHigbyTest() throws Exception {
+		CliffHigby();
+	}
+
+	@Test
+	public void KevinPalmerTest() throws Exception {
+		KevinPalmer();
+	}
+
+	@Test
+	public void PatriarchOtherWardsTest() throws Exception {
+		PatriarchOtherWards();
+	}
+
+
+
+
+
 	//@Test
 	//public void loginCheckTest() throws Exception {
 	//	loginCheck();	
@@ -1303,30 +1326,25 @@ public class LDSToolsiOS {
 		loginProxyData("3446450099",
 				"/7u189715/5u511293/",
 				"p1175/1151u1000047/:p143/7u189715/5u511293/",
-				"Proxy - Test", "ChristieWhiting");
+				"P-TEST", "proxyt");
 		
 		//true will setup ping for a non-leader
 		pinPage("1", "1", "3", "3", true);
 		
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerHELP");
-		Thread.sleep(2000);
-		clickButtonByXpath("About");
-		Assert.assertTrue(checkElementTextViewReturnContains("ChristieWhiting"));
+		checkAllWardDirectories();		
 		
+		logoutUser();
 		
-		Thread.sleep(2000);
-		pressBackKey();
+		/*
 		clickButtonByXpath("Drawer");
 		clickButtonByXpath("DrawerSETTINGS");
 		
 		clickButtonByXpathTitleName("Sign Out");
 		clickButtonByXpath("SignOutOK");
-	
+		*/
 	}
 	
 	public void CliffHigby() throws Exception {
-		List<String> StakeWard = new ArrayList<String>();
 		loginProxyData("295740465",
 				"/7u191/5u504505/",
 				"p428/467u376892/28u381772/:p1711/59u1004603/22u388300/:p1788/467u376892/28u381772/:p1680/32u1326376/:p789/8u1006967/1u563013/:p1887/14u1004816/467u376892/",
@@ -1337,52 +1355,28 @@ public class LDSToolsiOS {
 		
 		checkAllWardDirectories();
 		
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerHELP");
-		Thread.sleep(2000);
-		clickButtonByXpath("About");
-		Assert.assertTrue(checkElementTextViewReturnContains("CliffHigby"));
-
-		Thread.sleep(2000);
-
-		pressBackKey();
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerSETTINGS");
-		
-		clickButtonByXpathTitleName("Sign Out");
-		clickButtonByXpath("SignOutOK");
+		logoutUser();
 	}
 	
 	public void KevinPalmer() throws Exception {
 		loginProxyData("3182767230",
 				"/7u50482/5u511846/",
 				"p222/7u50482/5u511846/:p39/3u2019809/1u790206/:p2/5u511846/1u790206/",
-				"Proxy - Test", "KevinPalmer");
+				"P-TEST", "proxyt");
 		
 		//true will setup ping for a non-leader
 		pinPage("1", "1", "3", "3", true);
 		
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerHELP");
-		Thread.sleep(2000);
-		clickButtonByXpath("About");
-		Assert.assertTrue(checkElementTextViewReturnContains("KevinPalmer"));
-
-		Thread.sleep(2000);
-
-		pressBackKey();
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerSETTINGS");
+		checkAllWardDirectories();
 		
-		clickButtonByXpathTitleName("Sign Out");
-		clickButtonByXpath("SignOutOK");
+		logoutUser();
 	}
 	
 	public void PatriarchOtherWards() throws Exception {
 		loginProxyData("3182767230",
 				"/7u56030/5u524735/",
 				"p13/5u524735/",
-				"Proxy - Test", "TestPatriarch");
+				"P-TEST", "proxyt");
 		
 		//true will setup ping for a non-leader
 		pinPage("1", "1", "3", "3", true);
@@ -1392,65 +1386,56 @@ public class LDSToolsiOS {
 		Assert.assertFalse(checkElementTextViewRoboReturn("Vader, Darth"));
 		
 		//Search for a user that has children
-		clickButtonByID("MenuSearch");
+		//clickButtonByID("MenuSearch");
 		sendTextbyXpath("SearchArea", "Sefulu, Isaako");
 		
 		//Select the user
 		//Check that the children are visible
-		clickItemByXpathRoboText("Sefulu, Isaako & Telesia");
+		//clickItemByXpathRoboText("Sefulu, Isaako & Telesia");
 		clickLastTextViewRoboReturn("Sefulu, Isaako");
 		Thread.sleep(1000);
 		Assert.assertTrue(checkElementTextViewReturn("Isaako Sefulu"));
-		Assert.assertTrue(checkElementTextViewReturn("Telesia Sefulu"));
-		Assert.assertTrue(checkElementTextViewReturn("Vaileta Sefulu"));
+		//Assert.assertTrue(checkElementTextViewReturn("Telesia Sefulu"));
+		//Assert.assertTrue(checkElementTextViewReturn("Vaileta Sefulu"));
 		Assert.assertTrue(checkElementTextViewReturn("Satalaka Isaako"));
-		Assert.assertTrue(checkElementTextViewReturn("Logoipule Sefulu"));
+		//Assert.assertTrue(checkElementTextViewReturn("Logoipule Sefulu"));
 		Assert.assertTrue(checkElementTextViewReturn("Asiasiga Isaako"));
 		Assert.assertTrue(checkElementTextViewReturn("Eseta Isaako"));
-		clickButtonByXpath("Back");
+		clickButtonByXpath("TopDirectory");
+		Thread.sleep(1000);
+		
+		//Collapse the search 
 		clickButtonByXpath("SearchCollapse");
-		//pressBackKey();
 		
 		//Change to another Ward
 		//Check to see that the children are visible
-		clickButtonByXpath("SpinnerNav");
+		clickButtonByXpath("SpinnerSubTitle");
+		//clickButtonByXpath("SpinnerNav");
 		Thread.sleep(2000);
 		clickButtonByXpathTitleName("Fagamalo 2nd Ward");
 		
 		
 		//Search for a user that has children
-		clickButtonByID("MenuSearch");
+		//clickButtonByID("MenuSearch");
 		sendTextbyXpath("SearchArea", "Alofa, Pasi");
 		
 		//Select the user
 		//Check that the children are visible
 		clickItemByXpathRoboText("Alofa, Pasi & Rowena");
-		clickLastTextViewRoboReturn("Alofa, Pasi");
+		//clickLastTextViewRoboReturn("Alofa, Pasi");
 		Thread.sleep(1000);
 		Assert.assertTrue(checkElementTextViewReturn("Pasi Alofa"));
 		Assert.assertTrue(checkElementTextViewReturn("Rowena Alofa"));
 		Assert.assertTrue(checkElementTextViewReturn("Rozarnah Alofa"));
 		Assert.assertTrue(checkElementTextViewReturn("Leativaosalafai Shaleen Alofa"));
 		//Assert.assertTrue(checkElementTextViewReturn("Pioneer Aumoto"));
-		clickButtonByXpath("Back");
+		clickButtonByXpath("TopDirectory");
+		Thread.sleep(1000);
+		
+		//Collapse the search 
 		clickButtonByXpath("SearchCollapse");
-		//pressBackKey();
 		
-		
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerHELP");
-		Thread.sleep(2000);
-		clickButtonByXpath("About");
-		Assert.assertTrue(checkElementTextViewReturnContains("TestPatriarch"));
-
-		Thread.sleep(2000);
-
-		pressBackKey();
-		clickButtonByXpath("Drawer");
-		clickButtonByXpath("DrawerSETTINGS");
-		
-		clickButtonByXpathTitleName("Sign Out");
-		clickButtonByXpath("SignOutOK");
+		logoutUser();
 	}
 	
 	/**loginCheck()
@@ -1630,6 +1615,18 @@ public class LDSToolsiOS {
 		Boolean myReturnStatus;
 		List<WebElement> options= driver.findElements(By.xpath("//" + customText + "[@value='" + textElement + "']"));
 		if (options.isEmpty()) {
+			myReturnStatus = false;
+		} else {
+			myReturnStatus = true;
+		}
+		
+		return myReturnStatus;
+	}
+	
+	private Boolean checkFirstDirectoryUser() {
+		Boolean myReturnStatus;
+		String myString = driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[1]/UIAStaticText[1]")).getText();
+		if (myString.isEmpty()) {
 			myReturnStatus = false;
 		} else {
 			myReturnStatus = true;
@@ -2089,6 +2086,9 @@ public class LDSToolsiOS {
 	}
 	
 	
+	
+	
+	
 	//************************************************************
 	//*************** Start of command sequences *****************
 	//************************************************************
@@ -2167,6 +2167,9 @@ public class LDSToolsiOS {
 	private void loginProxyData(String IndividualId, String units, String positions, String chooseNetwork, String userName )  throws Exception {
 		//If the login is using any of the test networks we need to chagne it. 
 		//valid enteries "Production", "UAT", "Proxy - UAT", "Proxy - Test"
+		int myCheck;
+		int syncMessage = 0;
+		int warnMessage = 0;
 		if (!chooseNetwork.equals("Production")) {
 			Thread.sleep(1000);
 			clickButtonByXpath("TopHelp");
@@ -2186,7 +2189,6 @@ public class LDSToolsiOS {
 			clickButtonByXpath("TopDeveloper");
 			Thread.sleep(2000);
 			
-			
 			//Set the ID
 			clickButtonByXpath("Id");
 			sendTextbyXpath("HeaderAlertTextId", IndividualId );
@@ -2202,6 +2204,8 @@ public class LDSToolsiOS {
 			sendTextbyXpath("HeaderAlertTextPositions", positions );
 			clickButtonByXpath("HeaderOK");
 			
+
+			
 			clickButtonByXpath("TopHelp");
 			Thread.sleep(4000);
 			clickButtonByXpath("TopSignIn");
@@ -2215,13 +2219,36 @@ public class LDSToolsiOS {
 		Thread.sleep(4000);
 		
 		unitsToSync();
-		Thread.sleep(2000);
-		waitForTextToDisappear("DownloadingSync", 900 );
-		Thread.sleep(2000);
 		
-		//Calendar doesn't work with proxy data so we will just clear the alert. 
-		//clickButtonByXpath("AlertOK");
+
 		
+		
+		while ((warnMessage == 0) && (syncMessage == 0 )) {
+			
+			if (checkElementExistsByXpath("DownloadingSync") == true) {
+				waitForTextToDisappear("DownloadingSync", 900 );
+				Thread.sleep(2000);
+				syncMessage = 1;
+			}
+			
+			
+			myCheck = checkTextByXpathReturn("AlertMessage", "Warning");
+			if (myCheck == 1) {
+				clickButtonByXpath("OK");
+				Thread.sleep(2000);
+				warnMessage = 0;
+			} else {
+				warnMessage = 1;
+			}
+			
+			if (checkElementExistsByXpath("DownloadingSync") == true) {
+				syncMessage = 0;
+			}
+			
+			
+		}
+		
+
 	}
 
 	
@@ -2243,7 +2270,7 @@ public class LDSToolsiOS {
 		myCheck = checkTextByXpathReturn("AlertMessage", "Warning");
 		if (myCheck == 1) {
 			clickButtonByXpath("OK");
-			
+			//Thread.sleep(9000);
 		}
 		
 		//If this is a non-leader account the PIN message will be different
@@ -2253,8 +2280,8 @@ public class LDSToolsiOS {
 				clickButtonByXpath("OK");
 			} else {
 				clickButtonByXpath("Yes");
-				Thread.sleep(2000);
-				clickButtonByXpath("OK");
+				Thread.sleep(1000);
+				//clickButtonByXpath("OK");
 			}
 			
 			Thread.sleep(2000);
@@ -2706,7 +2733,7 @@ public class LDSToolsiOS {
 		//Members with Callings
 		clickButtonByXpathTitleName("Members with Callings");
 		Assert.assertTrue(checkElementTextViewReturn("Ami, Christian"));
-		Assert.assertTrue(checkElementTextViewReturn("Beehive President (4 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Beehive President (5 months)"));
 		Assert.assertFalse(checkElementTextViewReturn("Skywalker, Anakin"));
 		
 		clickButtonByXpath("TopSort");
@@ -2723,7 +2750,7 @@ public class LDSToolsiOS {
 		
 		clickButtonByXpath("TopSort");
 		clickButtonByXpathTitleName("Not Set Apart");
-		Assert.assertTrue(checkElementTextViewReturn("Young Men First Counselor (4 months)"));
+		Assert.assertTrue(checkElementTextViewReturn("Young Men First Counselor (5 months)"));
 		Assert.assertTrue(checkElementTextViewReturn("Tutunoa, Joe Liuafi"));
 		Assert.assertFalse(checkElementTextViewReturn("P0, C3"));
 		pressBackKey();
@@ -2806,27 +2833,35 @@ public class LDSToolsiOS {
 	
 	private void checkAllWardDirectories() throws Exception {
 		List<String> StakeWard = new ArrayList<String>();
-		clickButtonByXpath("SpinnerNav");
+		//clickButtonByXpath("SpinnerNav");
+		clickButtonByXpath("SpinnerSubTitle");
+		
 		Thread.sleep(2000);
 		
 		//Get Stake and all Wards
-		List<WebElement> options= driver.findElements(By.xpath("//*[@id='title']"));
+		List<WebElement> options= driver.findElements(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell/UIAStaticText"));
 		for (int i = 0 ; i < options.size(); i++ ) {
 			//System.out.println(options.get(i).getText());
 			StakeWard.add(options.get(i).getText());
 		}
-		pressBackKey();
+		//pressBackKey();
+		clickButtonByXpath("TopCancel");
+		
 		
 		//Go through each Stake and Ward to make sure it isn't blank
 		for(String StakeWardItem : StakeWard){
-			clickButtonByXpath("SpinnerNav");
+			//clickButtonByXpath("SpinnerNav");
+			clickButtonByXpath("SpinnerSubTitle");
 			Thread.sleep(2000);
+			System.out.println("To Click: " + StakeWardItem);
 			clickButtonByXpathTitleName(StakeWardItem);
 			//displayAllTextViewElements();
 			
-			//Should be a better way to do this. 
-			Assert.assertTrue(checkElementTextViewReturnContains("e"));
-			Assert.assertFalse(checkElementTextViewRoboReturn("Vader, Darth"));
+			//This will check to see if the first user has text.  
+			Assert.assertTrue(checkFirstDirectoryUser());
+			
+			//Assert.assertTrue(checkElementTextViewReturnContains("e"));
+			//Assert.assertFalse(checkElementTextViewRoboReturn("Vader, Darth"));
 		}
 	}
 	
@@ -2852,6 +2887,7 @@ public class LDSToolsiOS {
 			Thread.sleep(2000);
 		}
 	}
+	
 	
 	private void logoutUser() throws Exception {
 		Thread.sleep(1000);
