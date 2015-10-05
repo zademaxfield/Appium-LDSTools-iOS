@@ -162,14 +162,14 @@ public class LDSToolsiOS {
 		//bishopricCounselorAndWardClerk();	
 		//bishopMemberOfSeparateStake();	
 		//editCurrentUser();	
-		editOtherUser();	
+		//editOtherUser();	
 		//editOtherUserInvalidPhone();	
 		//editOtherUserInvalidEmail();	
 		//editVisibility();	
 		//invalidLoginCheck();	
 		//loginCheck();	
 		
-		//LeaderNonBishopric("LDSTools22");
+		LeaderNonBishopric("LDSTools22");
 		
 		
 		//Header Check
@@ -177,6 +177,8 @@ public class LDSToolsiOS {
 		//CliffHigby();
 		//KevinPalmer();
 		//PatriarchOtherWards();
+		//BjornGabler();
+		//arlon(); 
 
 	}
 	
@@ -1371,6 +1373,36 @@ public class LDSToolsiOS {
 		
 		logoutUser();
 	}
+	
+	//Bug: Will not sync
+	public void BjornGabler() throws Exception {
+		loginProxyData("23088869144",
+				"/7u165743/5u515442/",
+				"p208/7u165743/5u515442/:p205/7u165743/5u515442/:p1394/7u165743/5u515442/:p1559/7u165743/5u515442/",
+				"P-TEST", "proxyt");
+		
+		//true will setup ping for a non-leader
+		pinPage("1", "1", "3", "3", true);
+		
+		checkAllWardDirectories();
+		
+		logoutUser();
+	}
+	
+	public void arlon() throws Exception {
+		loginProxyData("2207033566",
+				"/7u243108/5u500593/",
+				"p1395/7u243108/5u500593/:p136/7u243108/5u500593/",
+				"P-TEST", "proxyt");
+		
+		//true will setup ping for a non-leader
+		pinPage("1", "1", "3", "3", true);
+		
+		checkAllWardDirectories();
+		
+		logoutUser();
+	}
+	
 	
 	public void PatriarchOtherWards() throws Exception {
 		loginProxyData("3182767230",
@@ -2666,12 +2698,14 @@ public class LDSToolsiOS {
 		//Missionary
 		clickButtonByXpath("Drawer");
 		clickButtonByXpath("DrawerMissionary");
-		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Kawika Tupuola"));
-		Assert.assertTrue(checkElementTextViewRoboReturn("Samoa Apia Mission"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Elder Kawika Tupuola"));
+		//Assert.assertTrue(checkElementTextViewRoboReturn("Samoa Apia Mission"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Dallin Fawcett"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Samoa Apia Mission"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Kitara, Lafaele"));
 		Assert.assertTrue(checkElementTextViewRoboReturn("Mission Leader"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Tama Kiliona Sitivi"));
+		Assert.assertTrue(checkElementTextViewRoboReturn("Elder Olo Young Yen Junior"));
 		//pressBackKey();
 	}
 	
