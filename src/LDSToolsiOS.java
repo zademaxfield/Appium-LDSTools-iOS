@@ -2141,14 +2141,19 @@ public class LDSToolsiOS {
 		if (!chooseNetwork.equals("Production")) {
 			Thread.sleep(1000);
 			clickButtonByXpath("TopHelp");
-			clickButtonByXpath("About");
-			longPressByXpath("Logo");
-
-			clickButtonByXpath("OK");
-
-			clickButtonByXpath("TopHelp");
-
-			clickButtonByXpath("DeveloperSettings");
+			
+			//New way to enable dev settings
+			for (int x = 1; x <= 5; x++ ) {
+				clickButtonByXpath("EnableDevSettings");
+			}
+			
+		
+			//clickButtonByXpath("About");
+			//longPressByXpath("Logo");
+			//clickButtonByXpath("OK");
+			//clickButtonByXpath("TopHelp");
+			//clickButtonByXpath("DeveloperSettings");
+			
 			clickButtonByXpath("Environment");
 			
 			
@@ -2205,14 +2210,20 @@ public class LDSToolsiOS {
 		if (!chooseNetwork.equals("Production")) {
 			Thread.sleep(1000);
 			clickButtonByXpath("TopHelp");
-			clickButtonByXpath("About");
-			longPressByXpath("Logo");
-
-			clickButtonByXpath("OK");
-
-			clickButtonByXpath("TopHelp");
-
-			clickButtonByXpath("DeveloperSettings");
+			
+			
+			//New way to enable dev settings
+			for (int x = 1; x <= 5; x++ ) {
+				clickButtonByXpath("EnableDevSettings");
+			}
+			
+			//clickButtonByXpath("About");
+			//longPressByXpath("Logo");
+			//clickButtonByXpath("OK");
+			//clickButtonByXpath("TopHelp");
+			//clickButtonByXpath("DeveloperSettings");
+			
+			
 			clickButtonByXpath("Environment");
 			
 			
