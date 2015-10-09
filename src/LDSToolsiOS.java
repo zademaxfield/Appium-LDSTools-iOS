@@ -1724,7 +1724,12 @@ public class LDSToolsiOS {
 	 * @param textElement - Xpath of element must be found if uiMap
 	 */
 	private void clickButtonByXpath(String textElement) {
-		driver.findElement(By.xpath(this.prop.getProperty(textElement))).click();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(this.prop.getProperty(textElement))));
+		myElement.click();
+		
+		
+		//driver.findElement(By.xpath(this.prop.getProperty(textElement))).click();
 	}
 	
 	
@@ -1736,9 +1741,11 @@ public class LDSToolsiOS {
 	 * @param textElement - text of element
 	 */
 	private void clickButtonByXpathTitleName(String textElement ) {
-		//WebElement element;
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@name='" + textElement + "']")));
+		myElement.click();
 		
-		driver.findElement(By.xpath("//*[@name='" + textElement + "']")).click();
+		//driver.findElement(By.xpath("//*[@name='" + textElement + "']")).click();
 		
 		//I don't really like this sleep but it seems to be needed 
 		try {
@@ -1754,10 +1761,14 @@ public class LDSToolsiOS {
 	 * @param textElement - text of element
 	 */
 	private void clickItemByXpathRoboText(String textElement ) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@value='" + textElement + "']")));
+		myElement.click();
+
 		//WebElement element;
 		//System.out.println("TEXT ELEMENT: " + textElement);
 		//driver.findElement(By.xpath("//RobotoTextView[@value='" + textElement + "']")).click();
-		driver.findElement(By.xpath("//*[@value='" + textElement + "']")).click();
+		//driver.findElement(By.xpath("//*[@value='" + textElement + "']")).click();
 		
 		//I don't really like this sleep but it seems to be needed 
 		try {
@@ -1768,10 +1779,13 @@ public class LDSToolsiOS {
 	}
 	
 	private void clickItemByXpathRoboTextContains(String textElement ) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(@name, '" + textElement + "')]")));
+		myElement.click();
 		//WebElement element;
 		//System.out.println("TEXT ELEMENT: " + textElement);
 		//driver.findElement(By.xpath("//RobotoTextView[contains(@value, '" + textElement + "')]")).click();
-		driver.findElement(By.xpath("//*[contains(@name, '" + textElement + "')]")).click();
+		//driver.findElement(By.xpath("//*[contains(@name, '" + textElement + "')]")).click();
 
 		//I don't really like this sleep but it seems to be needed 
 		try {
@@ -1869,7 +1883,7 @@ public class LDSToolsiOS {
 		Thread.sleep(1000);
     	driver.findElement(By.xpath("//*[@name=\"Select All\"]")).click();
     	//driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[4]/UIAEditingMenu[1]/UIAElement[4]")).click();
-    	Thread.sleep(2000);
+    	//Thread.sleep(2000);
         clickButtonByXpath("KeyboardDel");
 		
 	}
@@ -2160,9 +2174,9 @@ public class LDSToolsiOS {
 			clickButtonByXpath(chooseNetwork);
 			
 			clickButtonByXpath("TopDeveloper");
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			clickButtonByXpath("TopHelp");
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
 			clickButtonByXpath("TopSignIn");
 		}
 		//sendTextbyXpath("LoginUsername", "LDSTools14");
@@ -2230,7 +2244,7 @@ public class LDSToolsiOS {
 			clickButtonByXpath(chooseNetwork);
 			
 			clickButtonByXpath("TopDeveloper");
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			
 			//Set the ID
 			clickButtonByXpath("Id");
@@ -2250,7 +2264,7 @@ public class LDSToolsiOS {
 
 			
 			clickButtonByXpath("TopHelp");
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
 			clickButtonByXpath("TopSignIn");
 		}
 		//sendTextbyXpath("LoginUsername", "LDSTools14");
@@ -2467,11 +2481,11 @@ public class LDSToolsiOS {
 		pressBackKey();
 		*/
 
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 
 		//pressBackKey();
 		clickButtonByXpath("TopDirectory");
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		
 		//Collapse the search 
 		clickButtonByXpath("SearchCollapse");
